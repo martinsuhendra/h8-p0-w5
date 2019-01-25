@@ -1,17 +1,15 @@
 function kaliTerusRekursif(angka) {
-    var stringNum = angka.toString();
-    if (angka < 10) {
-      return angka;
-    } else {
-      function kali(stringNum) {
-        if (!stringNum.length) {
-          return 1;
-        } else {
-          return stringNum[0] * kali(stringNum.slice(1));
-        }
+  var string = String(angka)
+
+  if (string.length === 1) {
+      return Number(angka)
+  } else {
+      var result = 1
+      for (i = 0; i < string.length; i++) {
+          result *= Number(string[i])
       }
-      return kaliTerusRekursif(kali(stringNum));
-    }
+  return kaliTerusRekursif(result)
+  }
 }
 
 // TEST CASES
